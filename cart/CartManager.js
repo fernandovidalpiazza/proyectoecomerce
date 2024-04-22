@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const CART_FILE = "./addtocart.json";
+const CART_FILE = "./cart/addtocart.json";
 
 class CartManager {
     constructor() {
@@ -23,19 +23,17 @@ class CartManager {
         }
     }
 
-    async addProductToCart(product) {
+    async addProductToCart(productId) {
+        // Aquí deberías obtener el producto por su ID, supongamos que ya tienes una función que lo hace
+        const product = await getProductById(productId);
+        
+        if (!product) {
+            console.error("El producto no existe.");
+            return;
+        }
+    
         this.cart.push(product);
         await this.saveCart();
-    }
-
-    async saveCart() {
-        try {
-            await fs.promises.writeFile(CART_FILE, JSON.stringify(this.cart, null, 2));
-            console.log("Carrito guardado correctamente.");
-        } catch (error) {
-            console.error("Error al guardar el carrito:", error);
-            throw error;
-        }
     }
 
     async removeFromCart(productId) {
@@ -51,6 +49,11 @@ class CartManager {
         } catch (error) {
             throw new Error("Error al leer el archivo:", error);
         }
+    }
+
+    async createCart() {
+        this.cart = [];
+        await this.saveCart();
     }
 }
 

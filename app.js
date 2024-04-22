@@ -10,10 +10,15 @@ app.use(express.json());
 
 // Utiliza las rutas de productos
 app.use("/api/products", productRoutes);
-app.use("/api/products/:id", productRoutes); 
+app.use("/cid/products/:productId", productRoutes); 
 app.use("/api/addProduct", productRoutes); 
 app.use("/api/updateProduct", productRoutes); 
 app.use("/api/delete", productRoutes);
+
+
+//crear carrito
+
+
 
 // Ruta estática para servir archivos estáticos
 app.use('/static', express.static(`${config.DIRNAME}/public`));
