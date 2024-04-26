@@ -2,6 +2,7 @@ import fs from 'fs';
 import { nanoid } from 'nanoid';
 
 
+
 const STORAGE = './storage/storageproductos/product.json';
 
 export default class ProductManager {
