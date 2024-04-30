@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Parte izquierda para el formulario -->
+            <div class="col-md-6">
+                <h2>Agregar Producto</h2>
+                <form class="productForm">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Título</label>
+                        <input type="text" class="form-control title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <input type="text" class="form-control description" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Precio</label>
+                        <input type="number" class="form-control price" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="thumbnail" class="form-label">Thumbnail</label>
+                        <input type="text" class="form-control thumbnail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="code" class="form-label">Código</label>
+                        <input type="text" class="form-control code" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number" class="form-control stock" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+                </form>
+            </div>
+            
+            <!-- Parte derecha para mostrar los productos existentes -->
+            <div class="col-md-6">
+                <h2>Productos Existentes</h2>
+                <section>
+                    <ul class="liveProducts list-group">
+                        {{#each products}}
+                            <li>
+                                <span>{{this.title}} - Precio: {{this.price}} - Stock: {{this.stock}}</span>
+                                <button class="btn btn-danger deleteProductBtn">Eliminar</button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        document.querySelector('.productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const product = {
+                title: document.querySelector('.title').value,
+                description: document.querySelector('.description').value,
+                price: document.querySelector('.price').value,
+                thumbnail: document.querySelector('.thumbnail').value,
+                code: document.querySelector('.code').value,
+                stock: document.querySelector('.stock').value
+            };
+
+            // Enviar el producto al servidor socket
+            socket.emit('addProduct', product);
+
+            // Enviar el producto al servidor a través de POST
+            axios.post('/api/addProduct', product)
+               .then(response => {
+                    console.log(response.data.message);
+                })
+                .catch(error => {
+                    console.error("Error al agregar el producto:", error);
+                });
+        });
+
+        // Manejar evento de WebSocket para agregar producto
+        socket.on('productagregado', function(product) {
+            console.log("Nuevo producto agregado:", product);
+            const liveProducts = document.querySelector('.liveProducts');
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.textContent = `${product.title} - Precio: ${product.price} - Stock: ${product.stock}`;
+            liveProducts.appendChild(listItem);
+        });
+
+        // Agregar listener de eventos para el botón de eliminar
+        document.querySelectorAll('.deleteProductBtn').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const listItem = this.closest('li');
+                const productTitle = listItem.querySelector('span').textContent.split(' - ')[0]; // Obtener el título del producto
+
+                // Enviar la solicitud al servidor a través de WebSocket para eliminar el producto
+                socket.emit('deleteProduct', productTitle);
+            });
+        });
+
+    </script>
+</body>
+</html>

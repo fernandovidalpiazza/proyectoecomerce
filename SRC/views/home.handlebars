@@ -1,0 +1,12 @@
+<h1>este es mi home {{home}}!</h1>
+<section>
+    <h2>productos a vender: </h2>
+
+    <ul>
+        {{#each products}}
+        {{!-- el this es porque estamos usando clases  --}}
+            <li>{{this.title}}</li>
+        {{/each}}
+     
+    </ul>
+</section>
