@@ -49,7 +49,7 @@
                         {{#each products}}
                             <li>
                                 <span>{{this.title}} - Precio: {{this.price}} - Stock: {{this.stock}}</span>
-                                <button class="btn btn-danger deleteProductBtn">Eliminar</button>
+                                <button class="btn btn-danger deleteProductBtn" data-id="{{this.id}}">Eliminar</button>
                             </li>
                         {{/each}}
                     </ul>
@@ -96,17 +96,19 @@
             listItem.classList.add('list-group-item');
             listItem.textContent = `${product.title} - Precio: ${product.price} - Stock: ${product.stock}`;
             liveProducts.appendChild(listItem);
+            getProductById(id);
+
         });
 
         // Agregar listener de eventos para el botón de eliminar
         document.querySelectorAll('.deleteProductBtn').forEach(button => {
             button.addEventListener('click', function(event) {
                 event.preventDefault();
-                const listItem = this.closest('li');
-                const productTitle = listItem.querySelector('span').textContent.split(' - ')[0]; // Obtener el título del producto
+                const productId = this.getAttribute('data-id'); // Obtener el ID del producto
 
                 // Enviar la solicitud al servidor a través de WebSocket para eliminar el producto
-                socket.emit('deleteProduct', productTitle);
+                socket.emit('deleteProduct', productId);
+                
             });
         });
 

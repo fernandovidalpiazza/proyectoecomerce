@@ -1,14 +1,5 @@
 [
   {
-    "title": "Producto 5",
-    "description": "Descripción del Producto 15",
-    "price": 100,
-    "thumbnail": "ruta/imagen1.jpg",
-    "code": "P005",
-    "stock": 10,
-    "id": "lHJans4zpz9ZiRpiJGGHI"
-  },
-  {
     "title": "Producto 6",
     "description": "Descripción sdel producto de ejemplo 2",
     "price": 9119.99,
@@ -16,15 +7,6 @@
     "code": "PROD125",
     "stock": 10,
     "id": 4
-  },
-  {
-    "title": "tv",
-    "description": "es la mejor tv ",
-    "price": "1500",
-    "thumbnail": "fasdfdsa",
-    "code": "15",
-    "stock": "10",
-    "id": "pHLW2u9XBXnOe1WxmaNPR"
   },
   {
     "title": "telefono",
@@ -36,165 +18,21 @@
     "id": "VtCs9txDdCfPeVgTzLw2f"
   },
   {
-    "title": "teclado",
-    "description": "fdasfsd",
-    "price": "1500",
-    "thumbnail": "fasdfdsa",
-    "code": "12",
-    "stock": "102",
-    "id": "eLVLQ7zjsIBs4EW-L3WHY"
+    "title": "vcxz",
+    "description": "fsdafsd",
+    "price": "453",
+    "thumbnail": "456",
+    "code": "645",
+    "stock": "645",
+    "id": "GS6Qsv_kKGIjVy954qviN"
   },
   {
-    "title": "impresora",
-    "description": "impresora",
-    "price": "10",
-    "thumbnail": "fasdfdsa",
-    "code": "5001",
-    "stock": "12",
-    "id": "JrhCKl39pk5lwKlk7zJzU"
-  },
-  {
-    "title": "pc",
-    "description": "macana",
-    "price": "1500",
-    "thumbnail": "fdsafads",
-    "code": "54888",
-    "stock": "1",
-    "id": "j73JQOCYsaox1TLyFUWvr"
-  },
-  {
-    "title": "fasd",
-    "description": "fdasfsd",
-    "price": "1500",
-    "thumbnail": "fasdfdsa",
-    "code": "54888dfsafd",
-    "stock": "1",
-    "id": "DtL3WW86oBDOlu7Ps5nIs"
-  },
-  {
-    "title": "fasd",
-    "description": "fdasfsd",
-    "price": "1500",
-    "thumbnail": "fasdfdsa",
-    "code": "54888dfsafdfdsafsd",
-    "stock": "1",
-    "id": "ofgfdhnfv9_z0Q5H5l3gD"
-  },
-  {
-    "title": "fdsa",
-    "description": "fdasfsd",
-    "price": "1500",
-    "thumbnail": "fasdfdsa",
-    "code": "54888000",
-    "stock": "1",
-    "id": "iZB01SmPpsJgmWhBX7fmC"
-  },
-  {
-    "title": "super si anda",
-    "description": "sadf",
-    "price": "324",
-    "thumbnail": "546",
-    "code": "546",
-    "stock": "45",
-    "id": "THppqUeD0a-gXmWheCXit"
-  },
-  {
-    "title": "fsd",
-    "description": "fasdfsa",
-    "price": "312",
-    "thumbnail": "321312",
-    "code": "132",
-    "stock": "321",
-    "id": "ek_DHMM1zskhwC1BlDRoN"
-  },
-  {
-    "title": "gra",
-    "description": "fdsa",
-    "price": "312",
-    "thumbnail": "132",
-    "code": "354",
-    "stock": "534",
-    "id": "SEYDHA4NQhSLlTKw0LEsW"
-  },
-  {
-    "title": "ultima",
-    "description": "123",
-    "price": "312",
-    "thumbnail": "312",
-    "code": "312",
-    "stock": "312",
-    "id": "PrucpmkFml1cHLZM6emfg"
-  },
-  {
-    "title": "fasdfd",
-    "description": "fsda",
-    "price": "321",
-    "thumbnail": "fsda",
-    "code": "fsda",
-    "stock": "12",
-    "id": "UsI25UQYgDHVnLSmYIYX4"
-  },
-  {
-    "title": "fasdfd",
-    "description": "fsda",
-    "price": "321",
-    "thumbnail": "fsda",
-    "code": "4543645",
-    "stock": "12",
-    "id": "oeU1u6qWbRuhHktADkHnu"
-  },
-  {
-    "title": "fasdfd",
-    "description": "fsda",
-    "price": "321",
-    "thumbnail": "fsda54",
-    "code": "4543645564",
-    "stock": "12",
-    "id": "bEZ9Ps_YAlE4MGxJFRqsc"
-  },
-  {
-    "title": "fasdfd",
-    "description": "fsda",
-    "price": "321",
-    "thumbnail": "fsda54",
-    "code": "4543645564545",
-    "stock": "12",
-    "id": "T_guLOEk-QxjLhuerhNJs"
-  },
-  {
-    "title": "fdsa",
-    "description": "fdsa",
-    "price": "515",
-    "thumbnail": "fdsa",
-    "code": "dfsafdasfasdfs",
-    "stock": "12",
-    "id": "56gLwcuZaxYQUawE8cdvZ"
-  },
-  {
-    "title": "fdsa",
-    "description": "fdsa",
-    "price": "515",
-    "thumbnail": "fdsa",
-    "code": "dfsafdasfasdfsf",
-    "stock": "12",
-    "id": "dLJ13xI424JNLCxpAavn_"
-  },
-  {
-    "title": "fdsa",
-    "description": "fdsa",
-    "price": "515",
-    "thumbnail": "fdsa",
-    "code": "dfsafdasfasdfsfg",
-    "stock": "12",
-    "id": "YtVNFuL1l18GMx8upZO1o"
-  },
-  {
-    "title": "fdsa",
-    "description": "fdsa",
-    "price": "515",
-    "thumbnail": "fdsa",
-    "code": "dfsafdasfasdfsfg2",
-    "stock": "12",
-    "id": "GrfrVQAT2JQ7vVKjM4Vhb"
+    "title": "iuyt",
+    "description": "iopj",
+    "price": "24",
+    "thumbnail": "354",
+    "code": "453",
+    "stock": "645",
+    "id": "qZmPRkOK7XK4h948c2OTG"
   }
 ]

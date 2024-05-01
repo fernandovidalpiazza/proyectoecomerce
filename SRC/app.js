@@ -4,12 +4,15 @@ import productRoutes from "./routes/usersroutes.js";
 import cartRoutes from "./routes/cartroutes.js";
 import config from "./config.js";
 import { viewRutes } from "./routes/viewrutes.js";
-
+import ProductManager from "./mananger/prodoctmanger/product_manager.js";
 
 //crea un servidor 
 import { Server } from "socket.io";
 
+
+
 const app = express();
+const manager = new ProductManager();
 //const httpServer = createServer(app);
 //const io = new Server(httpServer);
 
@@ -53,6 +56,8 @@ const httpServer = app.listen(config.PORT, () => {
 const soketServer = new Server(httpServer);
 app.set("socket", soketServer);
 
+
+
 // Manejador de eventos de WebSocket
 //io.on("connection", (socket) => {
   console.log("Un cliente se ha conectado");
@@ -63,7 +68,27 @@ app.set("socket", soketServer);
         console.log("Nuevo producto recibido", product); 
         socket.emit("productagregado", product);
     });
+    // Manejar evento para eliminar productos
+    
+    socket.on("deleteProduct", productId => {
+      console.log("Se solicita eliminar el producto", productId);
+      manager.deleteProduct(productId) // Llamar al método deleteProduct de ProductManager
+          .then(() => {
+              // Emitir evento a todos los clientes conectados
+              soketServer.emit("productEliminado", productId);
+              console.log(productId, "eliminado para siempre");
+              soketServer.emit("refreshProductList", manager.getProducts());
+          })
+          .catch(error => {
+              console.error(error);
+              socket.emit("error", error);
+          });
+          
+  });
 });
+  
+  
+
 
 
 
