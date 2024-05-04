@@ -60,7 +60,7 @@ app.set("socket", soketServer);
 
 // Manejador de eventos de WebSocket
 //io.on("connection", (socket) => {
-  console.log("Un cliente se ha conectado");
+ // console.log("Un cliente se ha conectado");
 
   // Manejar eventos de WebSocket aquí
   soketServer.on("connection", socket => {
@@ -87,9 +87,4 @@ app.set("socket", soketServer);
   });
 });
   
-  
-
-
-
-
 

@@ -9,30 +9,21 @@
     "id": 4
   },
   {
-    "title": "telefono",
-    "description": "el mejor telefono",
-    "price": "10",
-    "thumbnail": "fdsafads",
-    "code": "500",
-    "stock": "1",
-    "id": "VtCs9txDdCfPeVgTzLw2f"
+    "title": "teclado",
+    "description": "f2133",
+    "price": "13",
+    "thumbnail": "531",
+    "code": "51",
+    "stock": "321",
+    "id": "6SuRqaXAJtgymK4tVLzuT"
   },
   {
-    "title": "vcxz",
-    "description": "fsdafsd",
-    "price": "453",
-    "thumbnail": "456",
-    "code": "645",
+    "title": "fdas",
+    "description": "fasd",
+    "price": "354",
+    "thumbnail": "43",
+    "code": "45",
     "stock": "645",
-    "id": "GS6Qsv_kKGIjVy954qviN"
-  },
-  {
-    "title": "iuyt",
-    "description": "iopj",
-    "price": "24",
-    "thumbnail": "354",
-    "code": "453",
-    "stock": "645",
-    "id": "qZmPRkOK7XK4h948c2OTG"
+    "id": "fBLleKULb1MbPore8dRTL"
   }
 ]
